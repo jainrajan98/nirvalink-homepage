@@ -1,0 +1,53 @@
+<footer class="footer">
+  <div class="footer-gradient"></div>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <span class="logo-icon">N</span>
+          <span class="logo-text">Nirvalink</span>
+        </div>
+        <p class="footer-tagline">
+          Integrating Technology, Design, and Strategic Expertise to build your digital future.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          @for (service of services; track service) {
+            <li><a (click)="scrollTo('services')">{{ service }}</a></li>
+          }
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          @for (link of quickLinks; track link.sectionId) {
+            <li><a (click)="scrollTo(link.sectionId)">{{ link.label }}</a></li>
+          }
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li>
+            <a href="mailto:rajan.jain@nirvalink.com">rajan.jain&#64;nirvalink.com</a>
+          </li>
+          <li>
+            <a href="tel:+919727511048">+91 9727511048</a>
+          </li>
+          <li>
+            <span>Ahmedabad, India</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; {{ currentYear }} Nirvalink. All rights reserved.</p>
+    </div>
+  </div>
+</footer>

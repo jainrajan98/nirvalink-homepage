@@ -1,0 +1,23 @@
+<section class="section why-section">
+  <div class="container">
+    <div class="section-header" appScrollAnimation>
+      <h2>Why Partner with <span class="gradient-text">Nirvalink</span></h2>
+      <p>We bring clarity, speed, and expertise to every project</p>
+    </div>
+
+    <div class="advantages-grid">
+      @for (item of advantages; track item.number; let i = $index) {
+        <div class="advantage-card" appScrollAnimation>
+          <div class="advantage-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path [attr.d]="item.icon"/>
+            </svg>
+          </div>
+          <span class="advantage-number">{{ item.number }}</span>
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.description }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,21 @@
+<section class="section tech-section">
+  <div class="container">
+    <div class="section-header" appScrollAnimation>
+      <h2>Technologies We <span class="gradient-text">Work With</span></h2>
+      <p>Modern tools and frameworks for scalable, future-proof solutions</p>
+    </div>
+
+    <div class="tech-grid" appScrollAnimation>
+      @for (category of categories; track category.name) {
+        <div class="tech-category">
+          <h3>{{ category.name }}</h3>
+          <div class="tech-tags">
+            @for (tech of category.technologies; track tech) {
+              <span class="tech-tag">{{ tech }}</span>
+            }
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

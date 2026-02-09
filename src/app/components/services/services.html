@@ -1,0 +1,28 @@
+<section id="services" class="section services-section">
+  <div class="container">
+    <div class="section-header" appScrollAnimation>
+      <h2>Our Core <span class="gradient-text">Services</span></h2>
+      <p>End-to-end technology solutions tailored to your business needs</p>
+    </div>
+
+    <div class="services-grid">
+      @for (service of services; track service.title; let i = $index) {
+        <div class="service-card animate-hidden stagger-{{ i + 1 }}" appScrollAnimation>
+          <div class="card-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path [attr.d]="service.icon"/>
+            </svg>
+          </div>
+          <h3>{{ service.title }}</h3>
+          <p>{{ service.description }}</p>
+          <a class="card-link">
+            Learn more
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
+      }
+    </div>
+  </div>
+</section>
