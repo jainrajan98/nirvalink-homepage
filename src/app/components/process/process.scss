@@ -1,8 +1,10 @@
-$primary-600: #4F46E5;
-$primary-500: #6366F1;
-$primary-100: #E0E7FF;
-$primary-50: #EEF2FF;
-$accent-500: #06B6D4;
+$primary-700: #1B3A5F;
+$primary-600: #1E6091;
+$primary-500: #2574A9;
+$primary-400: #2E8BC0;
+$primary-100: #D6EAF8;
+$primary-50: #EBF5FB;
+$accent-500: #3498DB;
 $gray-900: #111827;
 $gray-700: #374151;
 $gray-500: #6B7280;
@@ -35,14 +37,14 @@ $white: #FFFFFF;
   width: 56px;
   height: 56px;
   border-radius: 16px;
-  background: linear-gradient(135deg, $primary-600, $accent-500);
+  background: linear-gradient(135deg, $primary-400, $primary-700);
   display: flex;
   align-items: center;
   justify-content: center;
   color: $white;
   position: relative;
   z-index: 2;
-  box-shadow: 0 4px 14px rgba(79, 70, 229, 0.3);
+  box-shadow: 0 4px 14px rgba(30, 96, 145, 0.3);
 }
 
 .step-connector {

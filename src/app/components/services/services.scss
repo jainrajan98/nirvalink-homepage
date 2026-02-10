@@ -1,8 +1,10 @@
-$primary-600: #4F46E5;
-$primary-500: #6366F1;
-$primary-100: #E0E7FF;
-$primary-50: #EEF2FF;
-$accent-500: #06B6D4;
+$primary-700: #1B3A5F;
+$primary-600: #1E6091;
+$primary-500: #2574A9;
+$primary-400: #2E8BC0;
+$primary-100: #D6EAF8;
+$primary-50: #EBF5FB;
+$accent-500: #3498DB;
 $gray-900: #111827;
 $gray-700: #374151;
 $gray-500: #6B7280;
@@ -39,7 +41,7 @@ $white: #FFFFFF;
     left: 0;
     right: 0;
     height: 3px;
-    background: linear-gradient(135deg, $primary-600, $accent-500);
+    background: linear-gradient(135deg, $primary-400, $primary-700);
     opacity: 0;
     transition: opacity 0.3s ease;
   }
@@ -68,7 +70,7 @@ $white: #FFFFFF;
   transition: all 0.3s ease;
 
   .service-card:hover & {
-    background: linear-gradient(135deg, $primary-600, $primary-500);
+    background: linear-gradient(135deg, $primary-500, $primary-600);
     color: $white;
   }
 }

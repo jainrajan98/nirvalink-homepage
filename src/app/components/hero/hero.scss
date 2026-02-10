@@ -1,8 +1,11 @@
-$primary-600: #4F46E5;
-$primary-500: #6366F1;
-$primary-100: #E0E7FF;
-$primary-50: #EEF2FF;
-$accent-500: #06B6D4;
+$primary-700: #1B3A5F;
+$primary-600: #1E6091;
+$primary-500: #2574A9;
+$primary-400: #2E8BC0;
+$primary-300: #5DADE2;
+$primary-100: #D6EAF8;
+$primary-50: #EBF5FB;
+$accent-500: #3498DB;
 $gray-900: #111827;
 $gray-700: #374151;
 $gray-500: #6B7280;
@@ -15,7 +18,7 @@ $white: #FFFFFF;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 25%, #e0e7ff 50%, #dbeafe 75%, #ecfeff 100%);
+  background: linear-gradient(135deg, #EBF5FB 0%, #D6EAF8 25%, #AED6F1 50%, #D6EAF8 75%, #EBF5FB 100%);
 }
 
 .hero-bg {
@@ -35,7 +38,7 @@ $white: #FFFFFF;
 .orb-1 {
   width: 500px;
   height: 500px;
-  background: rgba(99, 102, 241, 0.3);
+  background: rgba(46, 139, 192, 0.3);
   top: -10%;
   right: -5%;
   animation-delay: 0s;
@@ -44,7 +47,7 @@ $white: #FFFFFF;
 .orb-2 {
   width: 400px;
   height: 400px;
-  background: rgba(6, 182, 212, 0.25);
+  background: rgba(93, 173, 226, 0.25);
   bottom: -10%;
   left: -5%;
   animation-delay: -7s;
@@ -53,7 +56,7 @@ $white: #FFFFFF;
 .orb-3 {
   width: 300px;
   height: 300px;
-  background: rgba(139, 92, 246, 0.2);
+  background: rgba(27, 58, 95, 0.2);
   top: 40%;
   left: 40%;
   animation-delay: -14s;
@@ -124,7 +127,7 @@ h1 {
 }
 
 .gradient-text {
-  background: linear-gradient(135deg, $primary-600, $accent-500);
+  background: linear-gradient(135deg, $primary-400, $primary-700);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
