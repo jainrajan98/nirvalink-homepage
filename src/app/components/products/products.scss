@@ -61,11 +61,15 @@ h2 {
   background: $white;
   border: 1px solid $border;
   border-radius: 12px;
-  padding: 2rem;
+  padding: 1.5rem;
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
   transition: box-shadow 0.2s ease, border-color 0.2s ease;
+
+  @media (min-width: 768px) {
+    padding: 2rem;
+  }
 
   &:hover {
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.07);

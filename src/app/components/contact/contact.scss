@@ -14,10 +14,11 @@ $white:   #FFFFFF;
 
 .contact-grid {
   display: grid;
-  gap: 4rem;
+  gap: 2.5rem;
 
   @media (min-width: 1024px) {
     grid-template-columns: 1fr 1.2fr;
+    gap: 4rem;
   }
 }
 
@@ -88,8 +89,12 @@ $white:   #FFFFFF;
 .contact-form-wrapper {
   background: $bg;
   border-radius: 1.5rem;
-  padding: 2.5rem;
+  padding: 1.5rem;
   border: 1px solid $border;
+
+  @media (min-width: 768px) {
+    padding: 2.5rem;
+  }
 }
 
 form {

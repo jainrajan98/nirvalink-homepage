@@ -19,9 +19,14 @@ $white:   #FFFFFF;
 
 .process-step {
   display: flex;
-  gap: 1.5rem;
+  gap: 1.25rem;
   position: relative;
-  padding-bottom: 2.5rem;
+  padding-bottom: 2rem;
+
+  @media (min-width: 768px) {
+    gap: 1.5rem;
+    padding-bottom: 2.5rem;
+  }
 
   &:last-child {
     padding-bottom: 0;
@@ -30,9 +35,9 @@ $white:   #FFFFFF;
 
 .step-icon {
   flex-shrink: 0;
-  width: 56px;
-  height: 56px;
-  border-radius: 16px;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
   background: $accent;
   display: flex;
   align-items: center;
@@ -41,16 +46,27 @@ $white:   #FFFFFF;
   position: relative;
   z-index: 2;
   box-shadow: 0 4px 14px rgba(37, 99, 235, 0.25);
+
+  @media (min-width: 768px) {
+    width: 56px;
+    height: 56px;
+    border-radius: 16px;
+  }
 }
 
 .step-connector {
   position: absolute;
-  left: 27px;
-  top: 56px;
+  left: 21px;
+  top: 44px;
   bottom: 0;
   width: 2px;
-  background: linear-gradient(to bottom, rgba($accent, 0.07), $border);
+  background: linear-gradient(to bottom, rgba($accent, 0.15), $border);
   z-index: 1;
+
+  @media (min-width: 768px) {
+    left: 27px;
+    top: 56px;
+  }
 }
 
 .step-content {
@@ -101,7 +117,7 @@ p {
 
   .step-connector {
     position: absolute;
-    top: 27px;
+    top: 28px;
     left: calc(50% + 28px);
     right: calc(-50% + 28px);
     width: auto;

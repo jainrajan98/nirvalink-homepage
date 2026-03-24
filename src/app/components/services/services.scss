@@ -43,12 +43,16 @@ h2 {
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: 1fr;
   gap: 1px;
   background: $border;
   border: 1px solid $border;
   border-radius: 12px;
   overflow: hidden;
+
+  @media (min-width: 600px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
   @media (min-width: 1024px) {
     grid-template-columns: repeat(3, 1fr);
@@ -57,12 +61,15 @@ h2 {
 
 .service-card {
   background: $white;
-  padding: 2rem;
+  padding: 1.5rem;
   transition: background 0.15s ease;
+
+  @media (min-width: 768px) {
+    padding: 2rem;
+  }
 
   &:hover {
     background: $bg;
-
     .card-link { color: $accent2; }
   }
 }
