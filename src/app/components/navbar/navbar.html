@@ -1,9 +1,7 @@
 <nav [class.scrolled]="isScrolled()">
   <div class="nav-container">
-    <a class="logo" (click)="scrollTo('hero')">
-      <div class="logo-wrap">
-        <img src="logo.jpg" alt="Nirvalink" class="logo-img">
-      </div>
+    <a class="logo-wordmark" (click)="scrollTo('hero')">
+      Nirvalink
     </a>
 
     <ul class="nav-links" [class.active]="mobileMenuOpen()">
@@ -13,7 +11,12 @@
         </li>
       }
       <li class="nav-cta">
-        <a class="btn-cta" (click)="scrollTo('contact')">Get Started</a>
+        <a class="btn-cta" (click)="scrollTo('contact')">
+          Get Started
+          <svg class="btn-arrow" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
       </li>
     </ul>
 
