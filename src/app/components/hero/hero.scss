@@ -30,28 +30,13 @@ $green:   #16A34A;
   -webkit-mask-image: radial-gradient(ellipse 80% 70% at 30% 50%, black 20%, transparent 80%);
 }
 
-// Two-column layout
-.hero-inner {
+.hero-content {
   position: relative;
   z-index: 1;
-  width: 100%;
-  max-width: 1200px;
+  text-align: center;
+  max-width: 720px;
   margin: 0 auto;
   padding: 4rem 1.5rem;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 3rem;
-  align-items: center;
-
-  @media (min-width: 1024px) {
-    grid-template-columns: 1fr 1fr;
-    gap: 5rem;
-    padding: 4rem 3rem;
-  }
-}
-
-// ── Left: Text ──
-.hero-content {
   animation: heroIn 0.7s ease-out both;
 }
 
@@ -68,6 +53,7 @@ $green:   #16A34A;
   color: $accent;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
   margin-bottom: 1.75rem;
   animation: heroIn 0.7s ease-out 0.1s both;
@@ -105,8 +91,8 @@ h1 {
 .hero-subtitle {
   font-size: clamp(1rem, 1.5vw, 1.125rem);
   color: $text2;
-  max-width: 480px;
-  margin-bottom: 2.5rem;
+  max-width: 520px;
+  margin: 0 auto 2.5rem;
   line-height: 1.8;
   animation: heroIn 0.7s ease-out 0.25s both;
 }
@@ -115,6 +101,7 @@ h1 {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
+  justify-content: center;
   margin-bottom: 2.5rem;
   animation: heroIn 0.7s ease-out 0.35s both;
 }
@@ -161,6 +148,7 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
+  justify-content: center;
   animation: heroIn 0.7s ease-out 0.45s both;
 }
 
@@ -175,195 +163,3 @@ h1 {
   letter-spacing: 0.04em;
 }
 
-// ── Right: Visual mock cards ──
-.hero-visual {
-  position: relative;
-  display: none;
-  align-items: flex-start;
-  justify-content: center;
-  animation: heroIn 0.8s ease-out 0.3s both;
-
-  @media (min-width: 1024px) {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-}
-
-.mock-card {
-  background: $white;
-  border: 1px solid $border;
-  border-radius: 14px;
-  padding: 1.25rem 1.5rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-}
-
-.card-1 {
-  width: 100%;
-  max-width: 340px;
-  align-self: flex-end;
-  animation: floatA 6s ease-in-out infinite;
-}
-
-.card-2 {
-  width: 100%;
-  max-width: 300px;
-  align-self: flex-start;
-  margin-left: 2.5rem;
-  animation: floatB 6s ease-in-out 2s infinite;
-}
-
-.card-3 {
-  width: 100%;
-  max-width: 200px;
-  align-self: flex-end;
-  margin-right: 1rem;
-  animation: floatA 6s ease-in-out 4s infinite;
-}
-
-@keyframes floatA {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
-}
-@keyframes floatB {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(8px); }
-}
-
-.mock-card-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 0.75rem;
-}
-
-.mock-label {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.72rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: $text3;
-}
-
-.mock-badge {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.68rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: $green;
-  background: rgba(22, 163, 74, 0.1);
-  border: 1px solid rgba(22, 163, 74, 0.2);
-  padding: 0.2rem 0.5rem;
-  border-radius: 4px;
-}
-
-.mock-status {
-  display: flex;
-  align-items: center;
-  gap: 0.3rem;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.68rem;
-  color: $green;
-}
-
-.status-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: $green;
-  animation: pulse 2s ease-in-out infinite;
-}
-
-.mock-insight {
-  font-size: 0.8125rem;
-  color: $text;
-  line-height: 1.6;
-  margin-bottom: 1rem;
-  font-style: italic;
-}
-
-.mock-chart {
-  display: flex;
-  align-items: flex-end;
-  gap: 4px;
-  height: 44px;
-}
-
-.bar {
-  flex: 1;
-  background: $bg2;
-  border-radius: 3px;
-  transition: height 0.3s ease;
-
-  &.bar-accent {
-    background: $accent;
-    opacity: 0.85;
-  }
-}
-
-.mock-steps {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  margin-bottom: 1rem;
-}
-
-.step {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.8rem;
-  color: $text3;
-
-  svg { color: $text3; }
-
-  &.done {
-    color: $text2;
-    svg { color: $green; }
-  }
-}
-
-.mock-accuracy {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-top: 0.75rem;
-  border-top: 1px solid $border;
-}
-
-.acc-label {
-  font-size: 0.78rem;
-  color: $text3;
-}
-
-.acc-value {
-  font-family: 'DM Serif Display', Georgia, serif;
-  font-size: 1.3rem;
-  color: $accent;
-}
-
-.mono-text {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.7rem;
-  color: $text3;
-  display: block;
-  margin-bottom: 0.5rem;
-}
-
-.big-number {
-  font-family: 'DM Serif Display', Georgia, serif;
-  font-size: 2.5rem;
-  color: $text;
-  line-height: 1;
-  margin-bottom: 0.375rem;
-
-  span {
-    font-size: 1.25rem;
-    color: $text2;
-  }
-}
-
-.sub-text {
-  font-size: 0.78rem;
-  color: $text3;
-}
