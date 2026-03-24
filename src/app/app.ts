@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Navbar } from './components/navbar/navbar';
 import { Hero } from './components/hero/hero';
 import { Services } from './components/services/services';
+import { Products } from './components/products/products';
 import { WhyChooseUs } from './components/why-choose-us/why-choose-us';
 import { Process } from './components/process/process';
 import { TechStack } from './components/tech-stack/tech-stack';
@@ -17,6 +18,7 @@ import { Footer } from './components/footer/footer';
     Navbar,
     Hero,
     Services,
+    Products,
     WhyChooseUs,
     Process,
     TechStack,

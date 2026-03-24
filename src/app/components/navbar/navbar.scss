@@ -1,11 +1,11 @@
-$primary-700: #1B3A5F;
-$primary-600: #1E6091;
-$primary-500: #2574A9;
-$primary-400: #2E8BC0;
-$white: #FFFFFF;
-$gray-900: #111827;
-$gray-700: #374151;
-$shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+$bg:      #FAFAF6;
+$bg2:     #F0EDE6;
+$border:  #DBD7CE;
+$text:    #1C1917;
+$text2:   #57534E;
+$accent:  #2563EB;
+$accent2: #1D4ED8;
+$white:   #FFFFFF;
 
 nav {
   position: fixed;
@@ -13,25 +13,30 @@ nav {
   left: 0;
   right: 0;
   z-index: 1000;
-  padding: 1.25rem 0;
-  transition: all 0.3s ease;
-  background: transparent;
+  height: 64px;
+  background: rgba(250, 250, 246, 0.9);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(219, 215, 206, 0.6);
+  transition: box-shadow 0.2s ease;
 
   &.scrolled {
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    box-shadow: $shadow-md;
-    padding: 0.75rem 0;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.06);
   }
 }
 
 .nav-container {
-  max-width: 1280px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 1.5rem;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  @media (min-width: 1024px) {
+    padding: 0 3rem;
+  }
 }
 
 .logo {
@@ -43,21 +48,13 @@ nav {
 }
 
 .logo-img {
-  height: 60px;
+  height: 40px;
   width: auto;
   object-fit: contain;
-  border-radius: 8px;
+  border-radius: 6px;
 
   @media (max-width: 767px) {
-    height: 46px;
-  }
-
-  nav.scrolled & {
-    height: 48px;
-
-    @media (max-width: 767px) {
-      height: 38px;
-    }
+    height: 34px;
   }
 }
 
@@ -68,36 +65,34 @@ nav {
   list-style: none;
 
   li a {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     font-weight: 500;
-    color: $gray-700;
+    color: $text2;
     cursor: pointer;
-    transition: color 0.2s ease;
+    transition: color 0.15s ease;
+    padding: 0.25rem 0;
     position: relative;
 
     &::after {
       content: '';
       position: absolute;
-      bottom: -4px;
+      bottom: -2px;
       left: 0;
       width: 0;
-      height: 2px;
-      background: $primary-600;
-      transition: width 0.3s ease;
+      height: 1.5px;
+      background: $accent;
+      transition: width 0.25s ease;
     }
 
     &:hover {
-      color: $primary-600;
-
-      &::after {
-        width: 100%;
-      }
+      color: $text;
+      &::after { width: 100%; }
     }
   }
 }
 
-.nav-cta .btn-sm {
-  padding: 0.625rem 1.5rem;
+.nav-cta .btn {
+  padding: 0.5rem 1.25rem;
   font-size: 0.875rem;
 }
 
@@ -110,30 +105,22 @@ nav {
   z-index: 1001;
 
   span {
-    width: 24px;
-    height: 2px;
-    background: $gray-900;
-    transition: all 0.3s ease;
+    width: 22px;
+    height: 1.5px;
+    background: $text;
+    transition: all 0.25s ease;
     display: block;
   }
 
   &.active {
-    span:nth-child(1) {
-      transform: rotate(45deg) translate(5px, 5px);
-    }
-    span:nth-child(2) {
-      opacity: 0;
-    }
-    span:nth-child(3) {
-      transform: rotate(-45deg) translate(5px, -5px);
-    }
+    span:nth-child(1) { transform: rotate(45deg) translate(4px, 4px); }
+    span:nth-child(2) { opacity: 0; }
+    span:nth-child(3) { transform: rotate(-45deg) translate(4px, -4px); }
   }
 }
 
 @media (max-width: 767px) {
-  .hamburger {
-    display: flex;
-  }
+  .hamburger { display: flex; }
 
   .nav-links {
     position: fixed;
@@ -141,13 +128,13 @@ nav {
     left: 0;
     right: 0;
     bottom: 0;
-    background: $white;
+    background: $bg;
     flex-direction: column;
     justify-content: center;
     gap: 2.5rem;
     opacity: 0;
     visibility: hidden;
-    transition: all 0.3s ease;
+    transition: all 0.25s ease;
 
     &.active {
       opacity: 1;
@@ -155,7 +142,7 @@ nav {
     }
 
     li a {
-      font-size: 1.25rem;
+      font-size: 1.2rem;
     }
   }
 }

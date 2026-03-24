@@ -15,6 +15,7 @@ export class Navbar {
 
   navItems = [
     { label: 'Services', sectionId: 'services' },
+    { label: 'Products', sectionId: 'products' },
     { label: 'Process', sectionId: 'process' },
     { label: 'About', sectionId: 'about' },
     { label: 'Contact', sectionId: 'contact' },

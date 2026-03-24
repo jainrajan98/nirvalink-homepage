@@ -1,0 +1,218 @@
+$bg:      #FAFAF6;
+$bg2:     #F0EDE6;
+$bg3:     #E6E2D9;
+$border:  #DBD7CE;
+$text:    #1C1917;
+$text2:   #57534E;
+$text3:   #A8A29E;
+$accent:  #2563EB;
+$accent2: #1D4ED8;
+$white:   #FFFFFF;
+$green:   #16A34A;
+
+.products-section {
+  background: $bg;
+  border-top: 1px solid $border;
+}
+
+.section-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: $accent;
+  display: block;
+  margin-bottom: 0.875rem;
+}
+
+h2 {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: clamp(1.875rem, 3vw, 2.75rem);
+  font-weight: 400;
+  color: $text;
+  margin-bottom: 0.875rem;
+  line-height: 1.15;
+
+  em {
+    font-style: italic;
+    color: $accent;
+  }
+}
+
+.section-header p {
+  font-size: 1rem;
+  color: $text2;
+  max-width: 520px;
+  line-height: 1.75;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.product-card {
+  background: $white;
+  border: 1px solid $border;
+  border-radius: 12px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+
+  &:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.07);
+    border-color: rgba(37, 99, 235, 0.3);
+  }
+}
+
+.product-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+.product-name-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+h3 {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: $text;
+  line-height: 1.1;
+}
+
+.product-tagline {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  color: $text3;
+  letter-spacing: 0.02em;
+}
+
+.status-badge {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.625rem;
+  border-radius: 4px;
+  white-space: nowrap;
+
+  &.status-beta {
+    background: rgba(22, 163, 74, 0.1);
+    color: $green;
+    border: 1px solid rgba(22, 163, 74, 0.25);
+  }
+
+  &.status-coming-soon {
+    background: rgba(37, 99, 235, 0.07);
+    color: $accent;
+    border: 1px solid rgba(37, 99, 235, 0.2);
+  }
+
+  &.status-in-development {
+    background: rgba(37, 99, 235, 0.07);
+    color: $accent;
+    border: 1px solid rgba(37, 99, 235, 0.2);
+  }
+}
+
+.product-desc {
+  font-size: 0.9375rem;
+  color: $text2;
+  line-height: 1.75;
+  flex: 1;
+}
+
+.feature-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    font-size: 0.875rem;
+    color: $text2;
+
+    svg {
+      color: $green;
+      flex-shrink: 0;
+    }
+  }
+}
+
+.product-cta {
+  margin-top: auto;
+  width: fit-content;
+  font-size: 0.875rem;
+  padding: 0.625rem 1.25rem;
+}
+
+.products-note {
+  margin-top: 3rem;
+  padding: 2rem;
+  background: $bg2;
+  border: 1px solid $border;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+
+  @media (max-width: 767px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+}
+
+.mono-text {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  color: $text3;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.products-note p {
+  font-size: 0.9375rem;
+  color: $text2;
+  flex: 1;
+}
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: $accent;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: 'Inter', system-ui, sans-serif;
+  padding: 0;
+  transition: gap 0.18s ease, color 0.18s ease;
+  white-space: nowrap;
+
+  &:hover {
+    color: $accent2;
+    gap: 0.625rem;
+  }
+}

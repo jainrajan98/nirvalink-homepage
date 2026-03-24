@@ -13,11 +13,11 @@ export class Footer {
   currentYear = new Date().getFullYear();
 
   services = [
-    'IT Solutions',
-    'Web & App Design',
+    'AI & Machine Learning',
     'Software Development',
-    'Business Consulting',
-    'Financial Services',
+    'Data Engineering',
+    'IT Consulting',
+    'Web & Product Design',
   ];
 
   quickLinks = [

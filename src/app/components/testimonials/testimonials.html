@@ -1,28 +1,33 @@
-<section class="section testimonials-section">
+<section class="section founder-section">
   <div class="container">
-    <div class="section-header" appScrollAnimation>
-      <h2>What Our Clients <span class="gradient-text">Say</span></h2>
-      <p>Hear from businesses we've helped transform</p>
-    </div>
-
-    <div class="testimonials-grid" appScrollAnimation>
-      @for (testimonial of testimonials; track testimonial.authorName) {
-        <div class="testimonial-card">
-          <div class="quote-icon">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor" opacity="0.15">
-              <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H14.017zM0 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151C7.546 6.068 5.983 8.789 5.983 11H10v10H0z"/>
+    <div class="founder-card" appScrollAnimation>
+      <div class="founder-left">
+        <div class="avatar">RJ</div>
+        <div class="founder-meta">
+          <span class="founder-name">Rajan Jain</span>
+          <span class="founder-title">Founder, Nirvalink</span>
+          <a href="https://rajanjain.vercel.app" target="_blank" rel="noopener" class="portfolio-link">
+            rajanjain.vercel.app
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/>
             </svg>
-          </div>
-          <p class="quote-text">{{ testimonial.quote }}</p>
-          <div class="author">
-            <div class="author-avatar">{{ testimonial.initials }}</div>
-            <div class="author-info">
-              <span class="author-name">{{ testimonial.authorName }}</span>
-              <span class="author-role">{{ testimonial.authorRole }}, {{ testimonial.company }}</span>
-            </div>
-          </div>
+          </a>
         </div>
-      }
+      </div>
+
+      <div class="founder-right">
+        <span class="section-label">From the Founder</span>
+        <blockquote>
+          "I started Nirvalink because I kept seeing businesses sit on valuable data with no way to act on it.
+          Not because they lacked ambition — but because ML felt too expensive, too slow, or too technical.
+          Nirvalink exists to close that gap: expert consulting now, purpose-built products soon.
+          We're a small team that moves fast and cares deeply about the work."
+        </blockquote>
+        <p class="founder-bio">
+          Software engineer with a background in computer science from NYU. Previously built
+          products across fintech, SaaS, and enterprise software. Based in Ahmedabad, working globally.
+        </p>
+      </div>
     </div>
   </div>
 </section>

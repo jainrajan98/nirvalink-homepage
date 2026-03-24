@@ -1,20 +1,15 @@
-$primary-700: #1B3A5F;
-$primary-600: #1E6091;
-$primary-500: #2574A9;
-$primary-400: #2E8BC0;
-$primary-100: #D6EAF8;
-$primary-50: #EBF5FB;
-$accent-500: #3498DB;
-$gray-900: #111827;
-$gray-700: #374151;
-$gray-500: #6B7280;
-$gray-200: #E5E7EB;
-$gray-100: #F3F4F6;
-$gray-50: #F9FAFB;
-$white: #FFFFFF;
+$bg:      #FAFAF6;
+$bg2:     #F0EDE6;
+$border:  #DBD7CE;
+$text:    #1C1917;
+$text2:   #57534E;
+$text3:   #A8A29E;
+$accent:  #2563EB;
+$accent2: #1D4ED8;
+$white:   #FFFFFF;
 
 .about-section {
-  background: $gray-50;
+  background: $bg;
 }
 
 .about-grid {
@@ -31,7 +26,8 @@ $white: #FFFFFF;
   display: inline-block;
   font-size: 0.875rem;
   font-weight: 700;
-  color: $primary-600;
+  font-family: 'JetBrains Mono', monospace;
+  color: $accent;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   margin-bottom: 1rem;
@@ -40,7 +36,8 @@ $white: #FFFFFF;
 .about-content {
   h2 {
     font-size: clamp(1.875rem, 3vw, 2.5rem);
-    font-weight: 800;
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-weight: 400;
     margin-bottom: 1.5rem;
     line-height: 1.2;
   }
@@ -48,7 +45,7 @@ $white: #FFFFFF;
 
 .about-text {
   font-size: 1.05rem;
-  color: $gray-500;
+  color: $text2;
   line-height: 1.8;
   margin-bottom: 1.25rem;
 }
@@ -56,8 +53,9 @@ $white: #FFFFFF;
 .about-values {
   h3 {
     font-size: 1.25rem;
-    font-weight: 700;
-    color: $gray-900;
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-weight: 400;
+    color: $text;
     margin-bottom: 1.5rem;
   }
 }
@@ -69,11 +67,11 @@ $white: #FFFFFF;
   background: $white;
   border-radius: 0.75rem;
   margin-bottom: 1rem;
-  border: 1px solid $gray-100;
+  border: 1px solid $border;
   transition: all 0.3s ease;
 
   &:hover {
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.07);
     transform: translateX(4px);
   }
 }
@@ -83,24 +81,24 @@ $white: #FFFFFF;
   width: 44px;
   height: 44px;
   border-radius: 10px;
-  background: $primary-50;
+  background: rgba($accent, 0.07);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: $primary-600;
+  color: $accent;
 }
 
 .value-content {
   h4 {
     font-size: 1rem;
     font-weight: 600;
-    color: $gray-900;
+    color: $text;
     margin-bottom: 0.25rem;
   }
 
   p {
     font-size: 0.875rem;
-    color: $gray-500;
+    color: $text2;
     line-height: 1.5;
   }
 }
