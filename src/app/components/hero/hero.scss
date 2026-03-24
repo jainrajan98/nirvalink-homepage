@@ -1,52 +1,68 @@
 $bg:      #FAFAF6;
 $bg2:     #F0EDE6;
-$bg3:     #E6E2D9;
 $border:  #DBD7CE;
 $text:    #1C1917;
 $text2:   #57534E;
 $text3:   #A8A29E;
 $accent:  #2563EB;
 $white:   #FFFFFF;
+$green:   #16A34A;
 
 .hero {
   position: relative;
   min-height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: center;
   overflow: hidden;
   background: $bg;
-  padding-top: 64px; // navbar height
+  padding-top: 64px;
 }
 
+// Subtle grid background
 .hero-grid-bg {
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(219, 215, 206, 0.4) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(219, 215, 206, 0.4) 1px, transparent 1px);
-  background-size: 48px 48px;
-  mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, black 40%, transparent 100%);
-  -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, black 40%, transparent 100%);
+    linear-gradient(rgba(219, 215, 206, 0.5) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(219, 215, 206, 0.5) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse 80% 70% at 30% 50%, black 20%, transparent 80%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 70% at 30% 50%, black 20%, transparent 80%);
 }
 
-.hero-content {
+// Two-column layout
+.hero-inner {
   position: relative;
   z-index: 1;
-  text-align: center;
-  max-width: 760px;
-  padding: 3rem 1.5rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: center;
+
+  @media (min-width: 1024px) {
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    padding: 4rem 3rem;
+  }
+}
+
+// ── Left: Text ──
+.hero-content {
   animation: heroIn 0.7s ease-out both;
 }
 
 @keyframes heroIn {
-  from { opacity: 0; transform: translateY(16px); }
+  from { opacity: 0; transform: translateY(20px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 
 .hero-label {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: $accent;
@@ -55,27 +71,27 @@ $white:   #FFFFFF;
   gap: 0.5rem;
   margin-bottom: 1.75rem;
   animation: heroIn 0.7s ease-out 0.1s both;
+}
 
-  &::before {
-    content: '';
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: #16A34A;
-    animation: pulse 2s ease-in-out infinite;
-  }
+.live-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: $green;
+  display: inline-block;
+  animation: pulse 2s ease-in-out infinite;
 }
 
 @keyframes pulse {
   0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.5; transform: scale(0.85); }
+  50% { opacity: 0.5; transform: scale(0.8); }
 }
 
 h1 {
   font-family: 'DM Serif Display', Georgia, serif;
-  font-size: clamp(2.75rem, 6vw, 5rem);
+  font-size: clamp(3.25rem, 7vw, 5.5rem);
   font-weight: 400;
-  line-height: 1.05;
+  line-height: 1.0;
   color: $text;
   margin-bottom: 1.5rem;
   animation: heroIn 0.7s ease-out 0.15s both;
@@ -87,38 +103,267 @@ h1 {
 }
 
 .hero-subtitle {
-  font-size: clamp(1rem, 2vw, 1.175rem);
+  font-size: clamp(1rem, 1.5vw, 1.125rem);
   color: $text2;
-  max-width: 580px;
-  margin: 0 auto 2.5rem;
+  max-width: 480px;
+  margin-bottom: 2.5rem;
   line-height: 1.8;
   animation: heroIn 0.7s ease-out 0.25s both;
 }
 
 .hero-actions {
   display: flex;
-  gap: 0.875rem;
-  justify-content: center;
+  gap: 1rem;
   flex-wrap: wrap;
-  margin-bottom: 3rem;
+  margin-bottom: 2.5rem;
   animation: heroIn 0.7s ease-out 0.35s both;
+}
+
+.btn-hero-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.75rem;
+  background: $text;
+  color: $white;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  font-family: 'Inter', system-ui, sans-serif;
+  border-radius: 10px;
+  border: 1.5px solid $text;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+
+  &:hover {
+    background: $accent;
+    border-color: $accent;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.25);
+  }
+}
+
+.btn-hero-ghost {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.875rem 0;
+  color: $text2;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  font-family: 'Inter', system-ui, sans-serif;
+  cursor: pointer;
+  transition: color 0.15s ease;
+  letter-spacing: 0.01em;
+
+  &:hover { color: $text; }
 }
 
 .hero-chips {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.625rem;
-  justify-content: center;
+  gap: 0.5rem;
   animation: heroIn 0.7s ease-out 0.45s both;
 }
 
 .chip {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 0.75rem;
-  padding: 0.375rem 0.875rem;
+  font-size: 0.72rem;
+  padding: 0.3rem 0.75rem;
   border: 1px solid $border;
   border-radius: 4px;
-  color: $text2;
+  color: $text3;
   background: $white;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.04em;
+}
+
+// ── Right: Visual mock cards ──
+.hero-visual {
+  position: relative;
+  display: none;
+  align-items: flex-start;
+  justify-content: center;
+  animation: heroIn 0.8s ease-out 0.3s both;
+
+  @media (min-width: 1024px) {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+.mock-card {
+  background: $white;
+  border: 1px solid $border;
+  border-radius: 14px;
+  padding: 1.25rem 1.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.card-1 {
+  width: 100%;
+  max-width: 340px;
+  align-self: flex-end;
+  animation: floatA 6s ease-in-out infinite;
+}
+
+.card-2 {
+  width: 100%;
+  max-width: 300px;
+  align-self: flex-start;
+  margin-left: 2.5rem;
+  animation: floatB 6s ease-in-out 2s infinite;
+}
+
+.card-3 {
+  width: 100%;
+  max-width: 200px;
+  align-self: flex-end;
+  margin-right: 1rem;
+  animation: floatA 6s ease-in-out 4s infinite;
+}
+
+@keyframes floatA {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+@keyframes floatB {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
+}
+
+.mock-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.mock-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: $text3;
+}
+
+.mock-badge {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: $green;
+  background: rgba(22, 163, 74, 0.1);
+  border: 1px solid rgba(22, 163, 74, 0.2);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+}
+
+.mock-status {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  color: $green;
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: $green;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.mock-insight {
+  font-size: 0.8125rem;
+  color: $text;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+.mock-chart {
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+  height: 44px;
+}
+
+.bar {
+  flex: 1;
+  background: $bg2;
+  border-radius: 3px;
+  transition: height 0.3s ease;
+
+  &.bar-accent {
+    background: $accent;
+    opacity: 0.85;
+  }
+}
+
+.mock-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  color: $text3;
+
+  svg { color: $text3; }
+
+  &.done {
+    color: $text2;
+    svg { color: $green; }
+  }
+}
+
+.mock-accuracy {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 0.75rem;
+  border-top: 1px solid $border;
+}
+
+.acc-label {
+  font-size: 0.78rem;
+  color: $text3;
+}
+
+.acc-value {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: 1.3rem;
+  color: $accent;
+}
+
+.mono-text {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: $text3;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.big-number {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: 2.5rem;
+  color: $text;
+  line-height: 1;
+  margin-bottom: 0.375rem;
+
+  span {
+    font-size: 1.25rem;
+    color: $text2;
+  }
+}
+
+.sub-text {
+  font-size: 0.78rem;
+  color: $text3;
 }

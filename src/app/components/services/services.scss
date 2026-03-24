@@ -8,6 +8,48 @@ $accent:  #2563EB;
 $accent2: #1D4ED8;
 $white:   #FFFFFF;
 
+// ── Marquee strip ──
+.marquee-strip {
+  border-top: 1px solid $border;
+  border-bottom: 1px solid $border;
+  background: $white;
+  overflow: hidden;
+  padding: 0.875rem 0;
+}
+
+.marquee-track {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  white-space: nowrap;
+  animation: marquee 28s linear infinite;
+  width: max-content;
+
+  span {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: $text3;
+  }
+
+  .sep {
+    color: $accent;
+    opacity: 0.5;
+    font-size: 0.625rem;
+  }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track { animation: none; }
+}
+
+// ── Services section ──
 .services-section {
   background: $white;
   border-top: 1px solid $border;

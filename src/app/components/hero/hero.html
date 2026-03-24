@@ -1,35 +1,98 @@
 <section id="hero" class="hero">
   <div class="hero-grid-bg"></div>
-  <div class="hero-content">
-    <span class="hero-label">Now Accepting Clients · Ahmedabad & Remote</span>
+  <div class="hero-inner">
 
-    <h1>
-      Software that ships.<br>
-      <em>Products that scale.</em>
-    </h1>
+    <!-- Left: Text content -->
+    <div class="hero-content">
+      <span class="hero-label">
+        <span class="live-dot"></span>
+        Now Accepting Clients · Ahmedabad &amp; Remote
+      </span>
 
-    <p class="hero-subtitle">
-      Nirvalink builds custom software and AI-powered products for businesses
-      ready to move fast. Expert consulting today — intelligent products shipping soon.
-    </p>
+      <h1>
+        Software<br>
+        that ships.<br>
+        <em>AI that thinks.</em>
+      </h1>
 
-    <div class="hero-actions">
-      <a class="btn btn-primary" (click)="scrollTo('contact')">
-        Start a Project
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M5 12h14M12 5l7 7-7 7"/>
-        </svg>
-      </a>
-      <a class="btn btn-outline" (click)="scrollTo('products')">
-        What We're Building
-      </a>
+      <p class="hero-subtitle">
+        Nirvalink builds custom software and ML-powered products
+        for businesses that need to move fast and think smarter.
+      </p>
+
+      <div class="hero-actions">
+        <a class="btn-hero-primary" (click)="scrollTo('contact')">
+          Start a Project
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+        <a class="btn-hero-ghost" (click)="scrollTo('products')">
+          What We're Building →
+        </a>
+      </div>
+
+      <div class="hero-chips">
+        <span class="chip">Machine Learning</span>
+        <span class="chip">Full-Stack Dev</span>
+        <span class="chip">Data Engineering</span>
+        <span class="chip">AI Products</span>
+      </div>
     </div>
 
-    <div class="hero-chips">
-      <span class="chip">Machine Learning</span>
-      <span class="chip">Full-Stack Dev</span>
-      <span class="chip">Data Engineering</span>
-      <span class="chip">IT Consulting</span>
+    <!-- Right: Visual mock cards -->
+    <div class="hero-visual" aria-hidden="true">
+      <div class="mock-card card-1">
+        <div class="mock-card-header">
+          <span class="mock-label">ML Insight</span>
+          <span class="mock-badge">Live</span>
+        </div>
+        <p class="mock-insight">"Revenue up 23% correlated with customer segment shift in Q4."</p>
+        <div class="mock-chart">
+          <div class="bar" style="height:40%"></div>
+          <div class="bar" style="height:65%"></div>
+          <div class="bar" style="height:45%"></div>
+          <div class="bar" style="height:80%"></div>
+          <div class="bar" style="height:60%"></div>
+          <div class="bar" style="height:95%"></div>
+          <div class="bar bar-accent" style="height:100%"></div>
+        </div>
+      </div>
+
+      <div class="mock-card card-2">
+        <div class="mock-card-header">
+          <span class="mock-label">AutoFlow ML</span>
+          <span class="mock-status">
+            <span class="status-dot"></span>
+            Deployed
+          </span>
+        </div>
+        <div class="mock-steps">
+          <div class="step done">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
+            Connect data
+          </div>
+          <div class="step done">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
+            Train model
+          </div>
+          <div class="step done">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
+            Deploy API
+          </div>
+        </div>
+        <div class="mock-accuracy">
+          <span class="acc-label">Model accuracy</span>
+          <span class="acc-value">94.7%</span>
+        </div>
+      </div>
+
+      <div class="mock-card card-3">
+        <span class="mono-text">// avg project delivery</span>
+        <div class="big-number">6 <span>weeks</span></div>
+        <p class="sub-text">from kickoff to production</p>
+      </div>
     </div>
+
   </div>
 </section>
