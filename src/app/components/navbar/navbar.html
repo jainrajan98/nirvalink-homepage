@@ -1,4 +1,4 @@
-<nav [class.scrolled]="isScrolled()" [class.hidden]="isHidden()">
+<nav [class.scrolled]="isScrolled()" [class.hidden]="isHidden()" [class.menu-open]="mobileMenuOpen()">
   <div class="nav-progress" [style.width.%]="scrollProgress()"></div>
 
   <div class="nav-container">
