@@ -1,7 +1,9 @@
 <nav [class.scrolled]="isScrolled()">
   <div class="nav-container">
     <a class="logo" (click)="scrollTo('hero')">
-      <img src="logo.jpg" alt="Nirvalink" class="logo-img">
+      <div class="logo-wrap">
+        <img src="logo.jpg" alt="Nirvalink" class="logo-img">
+      </div>
     </a>
 
     <ul class="nav-links" [class.active]="mobileMenuOpen()">
