@@ -115,17 +115,20 @@ nav {
     position: absolute;
     top: 0;
     left: 0;
-    width: 45%;
+    width: 40%;
     height: 100%;
-    background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.28) 50%, transparent 100%);
+    background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.2) 50%, transparent 100%);
     animation: shimmer 3s infinite 1.2s;
     pointer-events: none;
+    z-index: 0;
   }
+
+  // Keep text above shimmer layer
+  span, svg { position: relative; z-index: 1; }
 
   .btn-arrow {
     transition: transform 0.18s ease;
     flex-shrink: 0;
-    position: relative; // above shimmer
   }
 
   &:hover {

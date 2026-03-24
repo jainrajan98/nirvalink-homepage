@@ -102,12 +102,12 @@ p {
   .step-connector {
     position: absolute;
     top: 27px;
-    left: 56px;
-    right: -100%;
+    left: calc(50% + 28px);
+    right: calc(-50% + 28px);
     width: auto;
     height: 2px;
     bottom: auto;
-    background: linear-gradient(to right, rgba($accent, 0.07), $border);
+    background: linear-gradient(to right, rgba($accent, 0.15), $border);
   }
 
   .process-step:last-child .step-connector {
