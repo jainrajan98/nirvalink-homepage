@@ -50,7 +50,7 @@
           <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
             <div class="form-group">
               <label for="name">Full Name</label>
-              <input id="name" type="text" formControlName="name" placeholder="John Doe">
+              <input id="name" type="text" formControlName="name" placeholder="Your name">
               @if (contactForm.get('name')?.touched && contactForm.get('name')?.errors?.['required']) {
                 <span class="error">Name is required</span>
               }

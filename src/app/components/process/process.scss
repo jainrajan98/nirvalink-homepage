@@ -5,128 +5,136 @@ $text:    #1C1917;
 $text2:   #57534E;
 $text3:   #A8A29E;
 $accent:  #2563EB;
-$accent2: #1D4ED8;
 $white:   #FFFFFF;
 
 .process-section {
-  background: $white;
+  background: $bg;
+  border-top: 1px solid $border;
 }
 
-.process-timeline {
-  max-width: 700px;
-  margin: 0 auto;
+.section-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: $accent;
+  display: block;
+  margin-bottom: 0.875rem;
 }
 
-.process-step {
-  display: flex;
-  gap: 1.25rem;
-  position: relative;
-  padding-bottom: 2rem;
+h2 {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: clamp(1.875rem, 3vw, 2.75rem);
+  font-weight: 400;
+  color: $text;
+  margin-bottom: 0.875rem;
+  line-height: 1.1;
 
-  @media (min-width: 768px) {
+  em {
+    font-style: italic;
+    color: $accent;
+  }
+}
+
+// ── Grid ──
+.steps-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+
+  @media (min-width: 640px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
-    padding-bottom: 2.5rem;
-  }
-
-  &:last-child {
-    padding-bottom: 0;
   }
 }
 
-.step-icon {
-  flex-shrink: 0;
-  width: 44px;
-  height: 44px;
-  border-radius: 12px;
-  background: $accent;
+// ── Card ──
+.step-card {
+  background: $white;
+  border: 1px solid $border;
+  border-radius: 16px;
+  padding: 1.75rem;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, $accent, #7C3AED);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+
+  &:hover {
+    border-color: rgba(37, 99, 235, 0.25);
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.07);
+    transform: translateY(-3px);
+
+    &::before { transform: scaleX(1); }
+    .step-num { opacity: 0.07; }
+  }
+}
+
+// ── Decorative number ──
+.step-num {
+  position: absolute;
+  top: 0.75rem;
+  right: 1.25rem;
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: 5rem;
+  font-weight: 400;
+  color: $text;
+  opacity: 0.035;
+  line-height: 1;
+  transition: opacity 0.2s ease;
+  user-select: none;
+  pointer-events: none;
+  letter-spacing: -0.03em;
+}
+
+.step-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  position: relative;
+  z-index: 1;
+}
+
+.step-icon-wrap {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: rgba(37, 99, 235, 0.07);
+  border: 1px solid rgba(37, 99, 235, 0.15);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: $white;
-  position: relative;
-  z-index: 2;
-  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.25);
-
-  @media (min-width: 768px) {
-    width: 56px;
-    height: 56px;
-    border-radius: 16px;
-  }
-}
-
-.step-connector {
-  position: absolute;
-  left: 21px;
-  top: 44px;
-  bottom: 0;
-  width: 2px;
-  background: linear-gradient(to bottom, rgba($accent, 0.15), $border);
-  z-index: 1;
-
-  @media (min-width: 768px) {
-    left: 27px;
-    top: 56px;
-  }
-}
-
-.step-content {
-  padding-top: 0.25rem;
-  flex: 1;
-}
-
-.step-number {
-  display: inline-block;
-  font-size: 0.75rem;
-  font-weight: 700;
-  font-family: 'JetBrains Mono', monospace;
   color: $accent;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin-bottom: 0.25rem;
 }
 
 h3 {
-  font-size: 1.25rem;
   font-family: 'DM Serif Display', Georgia, serif;
+  font-size: 1.2rem;
   font-weight: 400;
   color: $text;
-  margin-bottom: 0.5rem;
+  line-height: 1.2;
 }
 
 p {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   color: $text2;
-  line-height: 1.6;
-}
-
-@media (min-width: 1024px) {
-  .process-timeline {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 0;
-    max-width: 100%;
-  }
-
-  .process-step {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding-bottom: 0;
-    gap: 1rem;
-  }
-
-  .step-connector {
-    position: absolute;
-    top: 28px;
-    left: calc(50% + 28px);
-    right: calc(-50% + 28px);
-    width: auto;
-    height: 2px;
-    bottom: auto;
-    background: linear-gradient(to right, rgba($accent, 0.15), $border);
-  }
-
-  .process-step:last-child .step-connector {
-    display: none;
-  }
+  line-height: 1.7;
 }
